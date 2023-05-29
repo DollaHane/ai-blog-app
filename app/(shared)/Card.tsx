@@ -39,7 +39,6 @@ export default function Card({ className, post, imageHeight, isSmallCard, isLong
           <Image
             fill
             alt="tech"
-            placeholder='blur'
             src={image}
             sizes="(max-width: 480px) 100vw,
                   (max-width: 768px) 75vw,
