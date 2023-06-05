@@ -1,3 +1,4 @@
+'use client'
 // COMPONENT Imports
 import React from 'react'
 import { Post } from "@prisma/client"

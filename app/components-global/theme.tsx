@@ -51,7 +51,7 @@ export const colorTokens = {
 
     typography: {
       fontFamily: ["Fauna One", "sans-serif"].join(","),
-      fontSize: 15,
+      fontSize: 12,
       h1: {
         fontFamily: ["Cinzel Decorative", "sans-serif"].join(","),
         fontSize: 48,
@@ -62,11 +62,19 @@ export const colorTokens = {
       },
       h3: {
         fontFamily: ["Cinzel", "sans-serif"].join(","),
-        fontSize: 20,
+        fontSize: 24,
       },
       h4: {
         fontFamily: ["Cinzel", "sans-serif"].join(","),
+        fontSize: 20,
+      },
+      h5: {
+        fontFamily: ["Cinzel", "sans-serif"].join(","),
         fontSize: 18,
+      },
+      h6: {
+        fontFamily: ["Cinzel", "sans-serif"].join(","),
+        fontSize: 15,
       },
     },
 });
