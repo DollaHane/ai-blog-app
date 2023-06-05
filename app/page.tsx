@@ -9,26 +9,19 @@ import Travel from './(home)/Travel'
 import Other from './(shared)/Other'
 import Subscribe from './(shared)/Subscribe'
 import Sidebar from './(shared)/Sidebar'
-import { prisma } from './lib/client'
 import { Post } from '@prisma/client'
 
 export const revalidate = 60;
 
-const getPosts = async () => {
-  const posts = await prisma.post.findMany();
-  const formattedPosts = await Promise.all(
-    posts.map(async (post: Post) => {
-      const imageModule = require(`../public${post.image}`);
-      return {
-        ...post,
-        image: imageModule.default,
-      };
-    })
-  );
-  return formattedPosts;
-}
-
 export default async function Home() {
+
+  const getPosts = async () => {
+    const response = await fetch(`/api/getposts`, {
+      method: 'GET',
+    })
+    const data: any = await response.json();
+    return data;
+  };
 
   const posts = await getPosts();
 

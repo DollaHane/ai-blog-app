@@ -2,10 +2,6 @@
 // REACT Imports
 import React from 'react'
 
-// PRISM Imports
-import { prisma } from '@/app/lib/client'
-import { Post as PostType } from '@prisma/client'
-
 // MUI Imports
 import { Box, Typography } from '@mui/material'
 
@@ -19,31 +15,25 @@ type Props = {
   params: { id: string };
 }
 
-// GET REQUEST
 export const revalidate = 60;
 
-const getPost = async (id: string) => {
-  const post: PostType | null = await prisma.post.findUnique({
-    where: { id },
-  });
-
-  if (!post) {
-    console.log(`Post with id ${id} not found..`);
-    return null;
-  }
-
-  const formattedPost = {
-    ...post,
-    createdAt: post?.createdAt?.toISOString(),
-    updatedAt: post?.updatedAt?.toISOString(),
-  }
-  return formattedPost;
-}
-
-// DEFAULT FUNCTION
 export default async function Post({ params }: Props) {
 
   const { id } = params;
+
+  const getPost = async (id: string) => {
+    const response = await fetch(`/api/getpost/${id}`, {
+      method: 'GET',
+    })
+    const data: any = await response.json();
+    const formattedPost = {
+      ...data,
+      createdAt: data?.createdAt?.toISOString(),
+      updatedAt: data?.updatedAt?.toISOString(),
+    }
+    return formattedPost;
+  };
+
   const post: FormattedPost | null = await getPost(id);
 
   if (!post) {
