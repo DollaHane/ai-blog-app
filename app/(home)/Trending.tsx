@@ -20,10 +20,8 @@ const TrendingCard = ({ className, post }: TrendingCardProps) => {
       href={`${process.env.NEXT_PUBLIC_URL}/post/${post?.id}`}
     >
       <Box className='z-0 relative w-full h-full'>
-        <Image
-          fill
+        <img
           alt='tech'
-          placeholder='blur'
           src={post?.image}
           sizes="(max-width: 480px) 100vw,
                 (max-width: 768px) 75vw,

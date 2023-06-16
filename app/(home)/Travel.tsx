@@ -5,7 +5,7 @@ import { Post } from '@prisma/client'
 
 // MUI & COMPS Imports
 import { Box, Typography, Divider } from '@mui/material'
-import Card from '../(shared)/Card'
+import Card from '../components/Card'
 
 type Props = {
   travelPosts: Array<Post>;

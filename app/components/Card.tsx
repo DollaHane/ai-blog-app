@@ -34,11 +34,10 @@ export default function Card({ className, post, imageHeight, isSmallCard, isLong
       {/* SECTION 1: CARD IMAGE */}
       <Link
         className="basis-full hover:opacity-70"
-        href={`${process.env.NEXT_PUBLIC_URL}/post/${post?.id}`}
+        href={`/post/${post?.id}`}
       >
         <Box className={`relative w-auto mb-3 ${imageHeight}`}>
-          <Image
-            fill
+          <img
             alt="tech"
             src={image}
             sizes="(max-width: 480px) 100vw,
@@ -54,7 +53,7 @@ export default function Card({ className, post, imageHeight, isSmallCard, isLong
       <Box>
 
         {/* SECTION 2: CARD TITLE */}
-        <Link href={`${process.env.NEXT_PUBLIC_URL}/post/${post?.id}`}>
+        <Link href={`/post/${post?.id}`}>
           <Typography
             variant='h4'
             className={`font-bold hover:text-accent-green

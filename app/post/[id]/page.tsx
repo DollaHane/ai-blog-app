@@ -1,13 +1,13 @@
 'use client'
 // REACT Imports
-import React from 'react'
+import React, { useEffect } from 'react'
 
 // MUI Imports
 import { Box, Typography } from '@mui/material'
 
 // COMPONENT Imports
 import { FormattedPost } from '@/app/components-shared/types'
-import Sidebar from '@/app/(shared)/Sidebar'
+import Sidebar from '@/app/components/Sidebar'
 import Content from './Content'
 
 // TYPESAFE
@@ -17,15 +17,18 @@ type Props = {
 
 export const revalidate = 60;
 
-export default async function Post({ params }: Props) {
+export default async function Post(context: any) {
 
-  const { id } = params;
+  const id = context.params.id;
+  console.log(id)
 
   const getPost = async (id: string) => {
+    console.log(id)
     const response = await fetch(`/api/getpost/${id}`, {
       method: 'GET',
     })
     const data: any = await response.json();
+    console.log("data", data)
     const formattedPost = {
       ...data,
       createdAt: data?.createdAt?.toISOString(),
@@ -35,6 +38,8 @@ export default async function Post({ params }: Props) {
   };
 
   const post: FormattedPost | null = await getPost(id);
+  console.log("post", post)
+
 
   if (!post) {
     return <Box>

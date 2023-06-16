@@ -12,7 +12,7 @@ import { Box, Typography, InputBase, Button } from "@mui/material";
 
 // COMPONENT Imports
 import { FormattedPost } from "@/app/components-shared/types";
-import SocialLinks from "@/app/(shared)/SocialLinks";
+import SocialLinks from "@/app/components/SocialLinks";
 import EditorMenuBar from "./EditorMenuBar";
 import CategoryAndEdit from "./CategoryAndEdit";
 import Article from "./Article";
