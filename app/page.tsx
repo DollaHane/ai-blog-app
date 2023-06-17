@@ -6,10 +6,11 @@ import { Box } from '@mui/material';
 import Trending from './(home)/Trending';
 import Tech from './(home)/Tech';
 import Travel from './(home)/Travel';
-import Other from './components/Other';
-import Subscribe from './components/Subscribe';
-import Sidebar from './components/Sidebar';
+import Other from './(shared)/Other';
+import Subscribe from './(shared)/Subscribe';
+import Sidebar from './(shared)/Sidebar';
 import { Post } from '@prisma/client';
+
 
 export const revalidate = 60;
 

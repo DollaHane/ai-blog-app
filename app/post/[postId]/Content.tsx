@@ -12,7 +12,7 @@ import { Box, Typography, InputBase, Button } from "@mui/material";
 
 // COMPONENT Imports
 import { FormattedPost } from "@/app/components-shared/types";
-import SocialLinks from "@/app/components/SocialLinks";
+import SocialLinks from "@/app/(shared)/SocialLinks";
 import EditorMenuBar from "./EditorMenuBar";
 import CategoryAndEdit from "./CategoryAndEdit";
 import Article from "./Article";
@@ -75,8 +75,7 @@ export default function Content({ post }: Props) {
     if (editor?.isEmpty) setContentError("This field is required.");
     if (title === "" || editor?.isEmpty) return;
 
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_URL}/api/post/${post?.id}`,
+    const response = await fetch(`/api/post/${post?.id}`,
       {
         method: "PATCH",
         headers: {

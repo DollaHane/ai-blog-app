@@ -34,7 +34,7 @@ export default function Article({contentError, editor, isEditable, setContent, t
       .setContent("Generating AI content. Please wait...")
       .run();
     
-    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/openai`, {
+    const response = await fetch(`/api/openai`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

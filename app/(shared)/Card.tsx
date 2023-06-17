@@ -1,7 +1,6 @@
 'use client'
 // REACT & NEXT Imports
 import React from 'react'
-import Image from "next/image"
 import Link from 'next/link'
 
 // MUI & PRISMA Imports
@@ -21,20 +20,20 @@ type Props = {
 export default function Card({ className, post, imageHeight, isSmallCard, isLongForm }: Props) {
   
   // Post data props..
-  const { id, title, author, createdAt, image, snippet } = post || {};
+  const { title, author, createdAt, image, snippet } = post || {};
 
   // Card date formatting..
   const date = new Date(createdAt);
   const options = { year: "numeric", month: "long", day: "numeric" } as any;
   const formattedDate = date.toLocaleDateString("en-US", options);
-
+  
   return (
     <Box className={className}>
 
       {/* SECTION 1: CARD IMAGE */}
       <Link
         className="basis-full hover:opacity-70"
-        href={`/post/${post?.id}`}
+        href="/post/[postId]" as={`/post/${post?.id}`}
       >
         <Box className={`relative w-auto mb-3 ${imageHeight}`}>
           <img

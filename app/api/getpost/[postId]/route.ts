@@ -3,15 +3,15 @@ import { NextRequest } from 'next/server';
 
 export async function GET(request: NextRequest, context: any) {
 
-  const postid = context.params.id
-  console.log("id", postid)
-    if (!id) {
-      return new Response(JSON.stringify({error: "Missing id parameter"}), { status: 400 });
-    }
+  const id = context.params.postId
+  console.log("server id", id)
+  if (!id) {
+    return new Response(JSON.stringify({error: "Missing id parameter"}), { status: 400 });
+  }
 
   try {
     const posts = await prisma.post.findUnique({
-      where: { id },
+      where: { id: id },
     });
 
     if (!posts) {

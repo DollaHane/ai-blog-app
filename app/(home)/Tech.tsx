@@ -5,13 +5,16 @@ import { Post } from '@prisma/client'
 
 // MUI & COMPS Imports
 import { Box, Typography, Divider } from '@mui/material'
-import Card from '../components/Card'
+import Card from '../(shared)/Card'
 
 type Props = {
   techPosts: Array<Post>;
 }
 
 export default function Tech({ techPosts }: Props) {
+
+  console.log("Tech-0", techPosts[0]?.id)
+
   return (
     <section>
       <Divider className='border-1'/>
