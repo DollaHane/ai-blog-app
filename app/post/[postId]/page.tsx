@@ -58,6 +58,7 @@ export default function Post({ params }: Props) {
         ) : (
           <Box className='md:flex gap-10 mb-5'>
             <Box className='basis-3/4'>
+              <Content post={post} />
             </Box>
             <Box className='basis-1/4'>
               <Sidebar/>

@@ -1,6 +1,7 @@
 'use client'
 // REACT & NEXT Imports
 import React, { useState } from "react";
+import Link from 'next/link'
 import Image from "next/image";
 
 // TIPTAP Imports
@@ -103,7 +104,7 @@ export default function Content({ post }: Props) {
 
       {/* BREADCRUMBS */}
       <Typography variant='h5'>
-        {`Home > ${post.category} > ${post.title}`}
+        <Link href="/">Home</Link>{` > ${post.category} > ${post.title}`}
       </Typography>
 
       {/* CATEGORY & EDIT */}
@@ -150,8 +151,7 @@ export default function Content({ post }: Props) {
 
         {/* IMAGE */}
         <Box className='relative w-auto mt-2 mb-16 h-96'>
-          <Image
-            fill
+          <img
             alt={post.title}
             src={post.image}
             sizes='(max-width: 480px) 100vw,
@@ -161,6 +161,15 @@ export default function Content({ post }: Props) {
             style={{ objectFit: 'cover' }}
           />
         </Box>
+
+        {/* ARTICLE */}
+        <Article
+          contentError={contentError}
+          editor={editor}
+          isEditable={isEditable}
+          setContent={setContent}
+          title={title}
+        />
 
         {/* SUBMIT BUTTON */}
         {isEditable && (
