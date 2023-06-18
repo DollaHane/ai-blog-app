@@ -9,7 +9,7 @@ import { Editor, EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
 // MUI Imports
-import { Box, Typography, InputBase, Button } from "@mui/material";
+import { Box, Typography, InputBase, Button, Divider } from "@mui/material";
 
 // COMPONENT Imports
 import { FormattedPost } from "@/app/components-shared/types";
@@ -124,7 +124,8 @@ export default function Content({ post }: Props) {
       {/* FORM */}
       <form onSubmit={handleSubmit}>
         {/* HEADER */}
-        <Box>
+        <Divider/>
+        <Box className='mt-5'>
           {isEditable ? (
             <Box>
               <InputBase
@@ -139,9 +140,9 @@ export default function Content({ post }: Props) {
               )}
             </Box>
           ) : (
-            <Typography variant="h3" className="font-bold text-3xl mt-3">
-              {title}
-            </Typography>
+              <Typography variant="h3" className="font-bold text-3xl mt-5">
+                {title}
+              </Typography>
           )}
           <Box className='flex gap-3'>
             <Typography variant='h5' className="font-semibold text-xs"></Typography>
@@ -150,7 +151,7 @@ export default function Content({ post }: Props) {
         </Box>
 
         {/* IMAGE */}
-        <Box className='relative w-auto mt-2 mb-16 h-96'>
+        <Box className='flex w-auto mt-2 mb-16 h-96'>
           <img
             alt={post.title}
             src={post.image}
@@ -158,7 +159,7 @@ export default function Content({ post }: Props) {
               (max-width: 768px) 85vw,
               (max-width: 1060px) 75vw,
               60vw'
-            style={{ objectFit: 'cover' }}
+            className="object-cover rounded-xl shadow-lg mx-auto my-2"
           />
         </Box>
 
