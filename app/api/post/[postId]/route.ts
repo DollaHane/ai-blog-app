@@ -1,11 +1,11 @@
 import prisma from "@/app/lib/client";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
 
-export async function PATCH(request: NextResponse, context: any) {
+export async function PATCH(request: NextRequest, context: any) {
   try {
     const id = context.params.postId
-    console.log("patch id", id)
+    console.log("patch server id", id)
     const { title, content } = await request.json();
     const post = await prisma.post.update({
       where: { id: id },

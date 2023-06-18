@@ -16,7 +16,7 @@ const TrendingCard = ({ className, post }: TrendingCardProps) => {
   
   return (
     <Link 
-      className={`${className} sm:mt-0 sm:h-auto flex mt-7 block w-full h-96 hover:opacity-70`}
+      className={`${className} sm:mt-0 sm:h-auto flex mt-7 w-full h-96 hover:opacity-70`}
       href={`/post/${post?.id}`}
     >
       <Box className='z-0 flex w-full'>
@@ -85,7 +85,7 @@ export default function Trending({ trendingPosts }: Props) {
         />
       </Box>
 
-      <Typography className='text-sm my-10'>
+      <Typography className='text-sm pt-10'>
         Id cursus purus adipiscing ipsum pretium. Scelerisque suspendisse
         pharetra ultrices mauris ut lacus sagittis pharetra dictum. Congue
         viverra in aliquam feugiat pellentesque.
