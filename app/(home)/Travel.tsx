@@ -22,7 +22,7 @@ export default function Travel({ travelPosts }: Props) {
           HOT
         </Typography>
         <Typography className='font-bold text-2xl'>
-          Latest News in Technology
+          Latest News in Travel
         </Typography>
       </Box>
 

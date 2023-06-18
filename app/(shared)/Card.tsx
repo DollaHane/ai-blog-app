@@ -2,6 +2,7 @@
 // REACT & NEXT Imports
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 // MUI & PRISMA Imports
 import { Post } from "@prisma/client"
@@ -35,15 +36,15 @@ export default function Card({ className, post, imageHeight, isSmallCard, isLong
         className="basis-full hover:opacity-70"
         href="/post/[postId]" as={`/post/${post?.id}`}
       >
-        <Box className={`relative w-auto mb-3 ${imageHeight}`}>
+        <Box className={`flex w-auto mb-3 ${imageHeight}`}>
           <img
             alt="tech"
             src={image}
-            sizes="(max-width: 480px) 100vw,
-                  (max-width: 768px) 75vw,
-                  (max-width: 1060px) 50vw,
+            sizes="(max-width: 480px) 100%,
+                  (max-width: 768px) 75%,
+                  (max-width: 1060px) 50%,
                   33vw"
-            style={{ objectFit: "cover" }}
+            className='object-cover rounded-xl shadow-lg mx-auto my-2'
           />
         </Box>
       </Link>

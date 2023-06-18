@@ -34,7 +34,7 @@ export default function Tech({ techPosts }: Props) {
         {/* LARGE CARD */}
         <Card
           className='col-span-1 row-span-3'
-          imageHeight='h-96'
+          imageHeight='h-50'
           post={techPosts[0]}
           isLongForm
         />
@@ -42,19 +42,19 @@ export default function Tech({ techPosts }: Props) {
         {/* SMALL CARD */}
         <Card
           className='col-span-1 row-span-1 mt-10 sm:mt-0 flex justify-between gap-3'
-          imageHeight='h-48'
+          imageHeight='h-full'
           post={techPosts[1]}
           isLongForm
         />
         <Card
           className='col-span-1 row-span-1 mt-10 sm:mt-0 flex justify-between gap-3'
-          imageHeight='h-48'
+          imageHeight='h-full'
           post={techPosts[2]}
           isLongForm
         />
         <Card
           className='col-span-1 row-span-1 mt-10 sm:mt-0 flex justify-between gap-3'
-          imageHeight='h-48'
+          imageHeight='h-full'
           post={techPosts[3]}
           isLongForm
         />
