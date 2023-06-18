@@ -27,7 +27,7 @@ export default function Sidebar() {
       <Subscribe/>
 
       <Image
-        className='hidden md:block my-8 w-full'
+        className='hidden md:block my-8 w-full rounded-lg shadow-lg'
         alt='advert-2'
         placeholder='blur'
         src={Ad2}
@@ -41,7 +41,7 @@ export default function Sidebar() {
 
       <Box>
         <Image
-          className='hidden md:block my-8 w-full'
+          className='hidden md:block my-8 w-full rounded-lg shadow-lg'
           alt='advert-2'
           placeholder='blur'
           src={AboutProfile}
