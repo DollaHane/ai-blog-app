@@ -17,28 +17,34 @@ export default function Other({ otherPosts }: Props) {
       <Divider className='border-1'/>
 
       {/* HEADER */}
-      <Typography>Other Trending Posts</Typography>
+      <Typography variant="h3" className='my-10 text-left font-bold'>
+        Other Trending Posts:
+      </Typography>
       <Box>
         <Card
           className='mt-5 sm:mt-0'
           imageHeight='h-80'
           post={otherPosts[0]}
         />
+        <Divider className='my-5'/>
         <Card
           className='mt-5 sm:mt-0'
           imageHeight='h-80'
           post={otherPosts[1]}
         />
+        <Divider className='my-5'/>
         <Card
           className='mt-5 sm:mt-0'
           imageHeight='h-80'
           post={otherPosts[2]}
         />
+        <Divider className='my-5'/>
         <Card
           className='mt-5 sm:mt-0'
           imageHeight='h-80'
           post={otherPosts[3]}
         />
+        <Divider className='my-5'/>
       </Box>
 
     </section>
