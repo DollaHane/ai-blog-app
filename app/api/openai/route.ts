@@ -3,7 +3,7 @@ import { Configuration, CreateChatCompletionResponse, OpenAIApi } from "openai";
 import { AxiosResponse } from "axios";
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: "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",
 });
 
 const openai = new OpenAIApi(configuration);
